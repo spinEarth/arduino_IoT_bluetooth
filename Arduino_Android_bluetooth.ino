@@ -1,14 +1,14 @@
-#include <SoftwareSerial.h>
-#include <DHT11.h>
+#include <SoftwareSerial.h> //블루투스 통신을 위한 헤더.
+#include <DHT11.h>  //dht11 온습도 습도 센서 헤더.
+DHT11 dht11(A0); //dht센서에서 신호를 아날로그0번으로 받아온다는 함수.
 
-DHT11 dht11(A0);
 int Rx = 7;
 int Tx = 8;
-float temp;
-int sound;
-SoftwareSerial bt(Rx,Tx);
-unsigned long previoustime = 0;
-float currenthumi = 0;
+
+float temp; //온도를 저장할 변수 temp 선언
+SoftwareSerial bt(Rx,Tx); // 블루투스 통신을 디지털7,8번으로 하기위한 함수
+unsigned long previoustime = 0; //이전시간 변수 previoustime 선언
+float currenthumi = 0; //
 float humilift = 0;
 float previoushumi = 0;
 int automation = 0;
